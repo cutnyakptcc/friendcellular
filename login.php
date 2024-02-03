@@ -7,11 +7,11 @@ if(isset($_POST['tombol'])){
     include_once("koneksi.php");
 
     //2. mengambil nilai dari input
-    $username = $_POST['username'];
+    $email = $_POST['email'];
     $password = md5($_POST['password']);
 
     //3. menulis query
-    $qry = "SELECT * FROM users WHERE username='$username' 
+    $qry = "SELECT * FROM users WHERE email='$email' 
     AND password='$password'";
 
     //4. jalankan query
@@ -26,19 +26,18 @@ if(isset($_POST['tombol'])){
         //1. mengambil seluruh data login
         $data = mysqli_fetch_array($result);
         $id = $data['id'];
-        $nama_costumer = $data['nama_costumer'];
+        $nama = $data['nama'];
 
         if($_POST['ingat'] == "yes"){
           //pembuatan cookie
           setcookie("cid",$id, time() + (60*60*24*3), "/");
-          setcookie("cnama_costumer",$nama_costumer, time() + (60*60*24*3), "/");
-   
+          setcookie("cnama",$nama, time() + (60*60*24*3), "/");
+          setcookie("cemail",$email, time() + (60*60*24*3), "/");
         }else{
           //pembuatan session
           $_SESSION['sid'] = $id;
-          $_SESSION['snama_costumer'] = $nama_costumer;
-          
-          
+          $_SESSION['snama'] = $nama;
+          $_SESSION['semail'] = $email;
         }
         
 

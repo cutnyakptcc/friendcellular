@@ -36,7 +36,7 @@ include_once("cek_login.php");
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Data Jurusan</h1>
+            <h1>Data Servis</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
@@ -63,10 +63,9 @@ include_once("cek_login.php");
                   <tr>
                     <th>No</th>
                     <th>Nama Costumer</th>
-                    <th>Id Costumer</th>
-                    <th>Tanggal Service</th>
-                    <th>Tipe Hp</th>
-                    <th>Harga Service</th>
+                    <th>Tanggal Servis</th>
+                    <th>Id Karyawan</th>
+                    <th>Harga Servis</th>
                     <th>Aksi</th>
                   </tr>
                   </thead>
@@ -86,9 +85,8 @@ include_once("cek_login.php");
                     <td><?php echo $nomor++ ?></td>
                     <td><?php echo $data['nama_costumer'] ?></td>
                     <td><?php echo $data['tgl_servis'] ?></td>
-                    <td><?php echo $data['tipe_hp'] ?></td>
+                    <td><?php echo $data['id_karyawan'] ?></td>
                     <td><?php echo $data['harga_servis'] ?></td>
-                    
                     <td> 4</td>
                   </tr>
                   <?php
@@ -99,10 +97,9 @@ include_once("cek_login.php");
                   <tr>
                   <th>No</th>
                     <th>Nama Costumer</th>
-                    <th>Id Costumer</th>
-                    <th>Tanggal Service</th>
-                    <th>Tipe Hp</th>
-                    <th>Harga Service</th>
+                    <th>Tanggal Servis</th>
+                    <th>Id Karyawan</th>
+                    <th>Harga Servis</th>
                     <th>Aksi</th>
                   </tr>
                   </tfoot>

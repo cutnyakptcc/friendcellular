@@ -1,7 +1,6 @@
-<!-- <?php
+<?php
 include_once("cek_login.php");
-?> -->
-
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -31,16 +30,64 @@ include_once("cek_login.php");
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <div class="container-fluid">
-        <div class="row mb-2">
-          <div class="col-sm-6">
-            <h1>Blank Page</h1>
+      <div class="row">
+          <div class="col-lg-4 col-6">
+            <?php
+              //koneksi
+              include_once("koneksi.php");
+              //sql query
+              $sql_servis = "SELECT * FROM servis";
+              //jalankan query
+              $result_servis = mysqli_query($con,$sql_servis);
+              //hitung record data
+              $servis = mysqli_num_rows($result_servis);
+            ?>
+            <!-- small box -->
+            <div class="small-box bg-info">
+              <div class="inner">
+                <h3><?php echo $servis ?></h3>
+
+                <p>Servis</p>
+              </div>
+              <div class="icon">
+                <i class="ion ion-bag"></i>
+              </div>
+              <a href="servis.php" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+            </div>
           </div>
-          <div class="col-sm-6">
-            <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Blank Page</li>
-            </ol>
+          <!-- ./col -->
+          <div class="col-lg-4 col-6">
+            <!-- small box -->
+            <div class="small-box bg-success">
+              <div class="inner">
+                <h3>53<sup style="font-size: 20px">%</sup></h3>
+
+                <p>Bounce Rate</p>
+              </div>
+              <div class="icon">
+                <i class="ion ion-stats-bars"></i>
+              </div>
+              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+            </div>
           </div>
+          <!-- ./col -->
+          <div class="col-lg-4 col-6">
+            <!-- small box -->
+            <div class="small-box bg-warning">
+              <div class="inner">
+                <h3>44</h3>
+
+                <p>User Registrations</p>
+              </div>
+              <div class="icon">
+                <i class="ion ion-person-add"></i>
+              </div>
+              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+            </div>
+          </div>
+          <!-- ./col -->
+         
+          <!-- ./col -->
         </div>
       </div><!-- /.container-fluid -->
     </section>
@@ -49,7 +96,7 @@ include_once("cek_login.php");
     <section class="content">
 
       <!-- Default box -->
-      <div class="card">
+      <!-- <div class="card">
         <div class="card-header">
           <h3 class="card-title">Title</h3>
 
@@ -64,13 +111,13 @@ include_once("cek_login.php");
         </div>
         <div class="card-body">
           Start creating your amazing application!
-        </div>
+        </div> -->
         <!-- /.card-body -->
-        <div class="card-footer">
+        <!-- <div class="card-footer">
           Footer
-        </div>
+        </div> -->
         <!-- /.card-footer-->
-      </div>
+      <!-- </div> -->
       <!-- /.card -->
 
     </section>
