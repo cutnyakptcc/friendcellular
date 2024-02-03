@@ -11,8 +11,8 @@ if(!isset($_SESSION['sid']) AND !isset($_COOKIE['cid'])){
 if(isset($_SESSION['sid'])){
     //variabel elemt session
     $l_id = $_SESSION['sid'];
-    $l_nama = $_SESSION['snama'];
-    $l_email = $_SESSION['semail'];
+    $l_nama = $_SESSION['snama_costumer'];
+    $l_email = $_SESSION['spassword'];
 
 }elseif(isset($_COOKIE['cid'])){
     //variabel elemt cookie
