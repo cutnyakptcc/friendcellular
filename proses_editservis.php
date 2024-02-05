@@ -11,7 +11,7 @@ $harga_servis = $_POST['harga_servis'];
 
 
 //3. membuat query INSERT
-$qry ="UPDATE servis SET id='$id',nama_costumer='$nama_costumer',tgl_servis='$tgl_servis',
+$qry ="UPDATE servis SET nama_costumer='$nama_costumer',tgl_servis='$tgl_servis',
  id_karyawan='$id_karyawan',harga_servis='$harga_servis' WHERE id='$id'";
 
 //4. menjalankan query
@@ -20,6 +20,6 @@ $simpan = mysqli_query($con,$qry);
 //5. alihkan ke halaman index.php
 ?>
 <script>
-    document.location= "index.php";
+    document.location= "servis.php";
     </script>
 

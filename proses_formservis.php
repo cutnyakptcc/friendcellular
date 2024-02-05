@@ -3,7 +3,7 @@
 include_once("koneksi.php");
 
 //2. mengambil seluruh nilai input dan dimasukkan ke variabel
-$id_servis = $_POST['id_servis'];
+$id= $_POST['id'];
 $nama_costumer = $_POST['nama_costumer'];
 $tgl_servis = $_POST['tgl_servis'];
 $id_karyawan = $_POST['id_karyawan'];
@@ -11,8 +11,8 @@ $harga_servis = $_POST['harga_servis'];
 
 
 //3. membuat query INSERT
-$qry ="INSERT INTO Proses_formservis (id_servis,nama_costumer,tgl_servis,id_karyawan,harga_servis) VALUES ('$id_servis',
-'$nama_costumer','$tgl_servis','$id_karyawan','harga_servis',)";
+$qry ="INSERT INTO servis (id,nama_costumer,tgl_servis,id_karyawan,harga_servis) VALUES ('$id',
+'$nama_costumer','$tgl_servis','$id_karyawan','$harga_servis')";
 
 //4. menjalankan query
 $simpan = mysqli_query($con,$qry);
@@ -21,6 +21,5 @@ $simpan = mysqli_query($con,$qry);
 ?>
 <script>
     document.location= "index.php";
-    </script>
+</script>
 
-?>

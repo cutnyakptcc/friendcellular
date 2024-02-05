@@ -69,7 +69,7 @@ include_once("cek_login.php");
                   <div class="container">
                   <div class="row">
                       <div class="col-md-12 m-auto mt-3">
-                        <a class="btn btn-outline-secondary mb-1" href = "tambah_servis.php" ><i class="fa-solid fa-user-plus"></i> Tambah </a>
+                        <a class="btn btn-outline-secondary mb-1" href = "form_servis.php" ><i class="fa-solid fa-user-plus"></i> Tambah </a>
                       <div class="card">
                   <tbody>
                   <?php
@@ -105,7 +105,7 @@ include_once("cek_login.php");
                               </div>
                               <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
-                                <a href="proseshapus_kategori.php?id=<?php echo $data['id'] ?>" class="btn btn-danger">Yes</a>
+                                <a href="proses_hapus_servis.php?id=<?php echo $data['id'] ?>" class="btn btn-danger">Yes</a>
                               </div>
                             </div>
                           </div>
