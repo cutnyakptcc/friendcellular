@@ -13,7 +13,7 @@ include_once("cek_login.php");
   <!-- Font Awesome -->
   <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
   <!-- DataTables -->
-  <link rel="stylesheet" href="plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
+  <link rel="stylesheet" href="plugins/datatables-4/css/dataTables.bootstrap4.min.css">
   <link rel="stylesheet" href="plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
   <link rel="stylesheet" href="plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
   <!-- Theme style -->
@@ -36,7 +36,7 @@ include_once("cek_login.php");
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Data Pembayaran</h1>
+            <h1>Servis Barang</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
@@ -53,28 +53,30 @@ include_once("cek_login.php");
 
       <!-- Default box -->
       <div class="card">
-              <div class="card-header">
-                <h3 class="card-title">DataTable with default features</h3>
-              </div>
               <!-- /.card-header -->
               <div class="card-body">
                 <table id="example1" class="table table-bordered table-striped">
                   <thead>
                   <tr>
                     <th>No</th>
-                    <th>Id Servis</th>
-                    <th>Id Costumer</th>
                     <th>Nama Costumer</th>
-                    <th>Total Bayar</th>
+                    <th>Tanggal Servis</th>
+                    <th>id_karyawan</th>
+                    <th>Harga Servis</th>
                     <th>Aksi</th>
                   </tr>
                   </thead>
+                  <div class="container">
+                  <div class="row">
+                      <div class="col-md-12 m-auto mt-3">
+                        <a class="btn btn-outline-secondary mb-1" href = "tambah_servis.php" ><i class="fa-solid fa-user-plus"></i> Tambah </a>
+                      <div class="card">
                   <tbody>
                   <?php
                     //1. membuat koneksi
                     include_once("koneksi.php");
                     //2. membuat query untuk menampilkan seluruh data
-                    $qry = "SELECT * FROM pembayaran";
+                    $qry = "SELECT * FROM servis";
                     //3. menjalankan query
                     $tampil = mysqli_query($con,$qry);
                     //4. menampilkan data menggunakan looping foreach
@@ -83,23 +85,45 @@ include_once("cek_login.php");
                     ?>
                   <tr>
                     <td><?php echo $nomor++ ?></td>
-                    <td><?php echo $data['id_servis'] ?></td>
-                    <td><?php echo $data['id_costumer'] ?></td>
                     <td><?php echo $data['nama_costumer'] ?></td>
-                    <td><?php echo $data['total_bayar'] ?></td>
-                    <td> 4</td>
+                    <td><?php echo $data['tgl_servis'] ?></td>
+                    <td><?php echo $data['id_karyawan'] ?></td>
+                    <td><?php echo $data['harga_servis'] ?></td>
+                    
+                    <td><a href="formedit_pembayaran.php?id=<?php echo $data['id'] ?>" class="btn btn-info btn-sm"><i class="fas fa-pencil-alt"></i></a>
+                    <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#hapus<?php echo $data['id'] ?>"><i class="fas fa-trash"></i></button>
+                    <!-- Modal -->
+                        <div class="modal fade" id="hapus<?php echo $data['id'] ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                          <div class="modal-dialog">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="exampleModalLabel">Peringatan</h1>
+                                <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+                              </div>
+                              <div class="modal-body">
+                                Apakah Data <b><?php echo $data['nama_costumer'] ?></b> Ingin Di Hapus?
+                              </div>
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+                                <a href="proseshapus_kategori.php?id=<?php echo $data['id'] ?>" class="btn btn-danger">Yes</a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                    </td>
                   </tr>
                   <?php
-                    }
-                    ?>
+                      }
+                  ?>
+
                   </tbody>
                   <tfoot>
                   <tr>
                   <th>No</th>
-                    <th>Id Servis</th>
-                    <th>Id Costumer</th>
                     <th>Nama Costumer</th>
-                    <th>Total Bayar</th>
+                    <th>Tanggal Servis</th>
+                    <th>id_karyawan</th>
+                    <th>Harga Servis</th>
                     <th>Aksi</th>
                   </tr>
                   </tfoot>
@@ -130,7 +154,7 @@ include_once("cek_login.php");
 <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <!-- DataTables  & Plugins -->
 <script src="plugins/datatables/jquery.dataTables.min.js"></script>
-<script src="plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
+<script src="plugins/datatables-4/js/dataTables.bootstrap4.min.js"></script>
 <script src="plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
 <script src="plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
 <script src="plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>

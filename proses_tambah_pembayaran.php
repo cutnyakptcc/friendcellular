@@ -4,14 +4,14 @@ include_once("koneksi.php");
 
 //2. mengambil seluruh nilai input dan dimasukkan ke variabel
 $id_servis = $_POST['id_servis'];
-$id_costumer = $_POST['tgl_servis'];
-$id_karyawan = $_POST['id_karyawan'];
-$harga_servis = $_POST['harga_servis'];
+$id_costumer = $_POST['id_costumer'];
+$nama_costumer =$_POST['nama_costumer'];
+$total_bayar = $_POST['total_bayar']; 
 
 
 //3. membuat query INSERT
-$qry ="INSERT INTO servis (nama_costumer,tgl_servis,id_karyawan,harga_servis) VALUES
- ('$nama_costumer','$tgl_servis','$id_karyawan',$harga_servis)";
+$qry ="INSERT INTO pembayaran (id_servis,id_costumer,nama_costumer,total_bayar,) VALUES
+ ('$id_servis','$tid_costumer','$nama_costumer',$total_bayar)";
 
 //4. menjalankan query
 $simpan = mysqli_query($con,$qry);

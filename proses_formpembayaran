@@ -9,7 +9,7 @@ $nama_costumer = $_POST['nama_costumer'];
 $total_bayar = $_POST['total_bayar'];
 
 //3. membuat query INSERT
-$qry ="INSERT INTO proses_formpembayaran (id_servis,id_costumer,nama_costumer,total_bayar,) 
+$qry ="INSERT INTO pembayaran (id_servis,id_costumer,nama_costumer,total_bayar,) 
 VALUES ('$id_servis','$id_costumer','$nama_costumer','$total_bayar',)";
 
 //4. menjalankan query

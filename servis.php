@@ -89,43 +89,8 @@ include_once("cek_login.php");
                     <td><?php echo $data['tgl_servis'] ?></td>
                     <td><?php echo $data['id_karyawan'] ?></td>
                     <td><?php echo $data['harga_servis'] ?></td>
-                    <td> <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#exampleModal<?php echo $data['id'] ?>" class="btn-warning btn-sm "> <i class="fas fa-folder"> </td>
-                <!-- Modal -->
-                <div class="modal fade" id="exampleModal<?php echo $data['id'] ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                    <div class="modal-header">
-                        <h1 class="modal-title fs-3" id="exampleModalLabel">Data Detail <?php echo $data['kategori'] ?></h1>
-                        <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                            <div class="mb-3">        
-                                <label for="nama_costumer" class="form-label"><b>Nama Costumer</b></label>
-                                <br>
-                                <span class fs-3 text><?php echo $data['nama_costumer'] ?> </span>
-                                <hr>
-                                <label for="tgl_servis" class="form-label"><b>Tanggal Servis</b></label>
-                                <br>
-                                <span class fs-3 text><?php echo $data['tgl_servis'] ?> </span>   
-                                <hr>
-                                <label for="id_karyawan" class="form-label"><b>Id Karyawan</b></label>
-                                <br>
-                                <span class fs-3 text><?php echo $data['id_karyawan'] ?> </span> 
-                                <hr>
-                                <label for="harga_servis" class="form-label"><b>Harga Servis</b></label>
-                                <br>
-                                <span class fs-3 text><?php echo $data['harga_servis'] ?> </span>                          
-                            </div>
-                        </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    </div>
-                    </div>
-                        </div>
-                        </div>
-                        </div>
-                        </div>
-                    <td><a href="formedit_kategori.php?id=<?php echo $data['id'] ?>" class="btn btn-info btn-sm"><i class="fas fa-pencil-alt"></i></a>
+                    
+                    <td><a href="formedit_servis.php?id=<?php echo $data['id'] ?>" class="btn btn-info btn-sm"><i class="fas fa-pencil-alt"></i></a>
                     <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#hapus<?php echo $data['id'] ?>"><i class="fas fa-trash"></i></button>
                     <!-- Modal -->
                         <div class="modal fade" id="hapus<?php echo $data['id'] ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
