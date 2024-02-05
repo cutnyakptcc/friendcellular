@@ -60,9 +60,9 @@ $idp = mysqli_fetch_array($data);
         </div>
        
         <div class="mb-3">
-            <label for="total_bayar" class="form-label">Total Bayar</label>       
-            <input type="number" name="total_bayar" value="<?php echo $ids['total_bayar']?>"  class="form-control" id="total_bayar" aria-describedby="total_bayarHelp">
-            <div id="total_bayar" class="form-text"></div>
+            <label for="harga_servis" class="form-label">Harga Servis</label>       
+            <input type="number" name="harga_servis" value="<?php echo $ids['harga_servis']?>"  class="form-control" id="harga_servis" aria-describedby="harga_servisHelp">
+            <div id="harga_servis" class="form-text"></div>
         </div>
         
         <button type="submit" class="btn btn-primary">Submit</button>
