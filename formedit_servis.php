@@ -1,11 +1,11 @@
 
 <?php
 include_once("koneksi.php");
-$id_servis = $_GET['id_servis'];
-$qry = "SELECT * FROM pembayaran WHERE id_servis='$id_servis'";
+$ids = $_GET['id'];
+$qry = "SELECT * FROM servis WHERE id='$id'";
 $data = mysqli_query($con,$qry);
 
-$ids = mysqli_fetch_array($data);
+$idp = mysqli_fetch_array($data);
 
 ?>
 <!DOCTYPE html>
@@ -41,20 +41,22 @@ $ids = mysqli_fetch_array($data);
         <div class="col-md-6 m-auto mt-3">
         <div class="card">
   <div class="card-header">
-    Edit Jadwal
+    Form servis
   </div>    
         <div class="card-body">
-        <form action="proses_editpembayaran.php" method="POST" >
-        <input type="hidden" name="id_servis" value="<?php echo $ids['id_servis']?>" >
+        <form action="proses_editservis.php" method="POST" >
+        <input type="hidden" name="id" value="<?php echo $idp['id']?>" >
+
         <div class="mb-3">
-            <label for="id_costumer" class="form-label">Id Costumer</label>
-            <input type="nama"  name="id_costumer" value="<?php echo $ids['id_costumer']?>" class="form-control" id="id_costumer" aria-describedby="id_costumerHelp">
-            <div id="id_costumer" class="form-text"></div>
+            <label for="tgl_servis" class="form-label">Tanggal Servis</label>
+            <input type="date"  name="tgl_servis" value="<?php echo $idp['tgl_servis']?>" class="form-control" id="tgl_servis" aria-describedby="tgl_servisHelp">
+            <div id="tgl_servis" class="form-text"></div>
         </div>
+
         <div class="mb-3">
-            <label for="nama_costumer" class="form-label">Nama Costumer</label>
-            <input type="nama"  name="nama_costumer" value="<?php echo $ids['nama_costumer']?>" class="form-control" id="nama_costumer" aria-describedby="nama_costumerHelp">
-            <div id="nama_costumer" class="form-text"></div>
+            <label for="id_karyawan" class="form-label">Id Karyawan</label>
+            <input type="nama"  name="id_karyawan" value="<?php echo $ids['id_karyawan']?>" class="form-control" id="id_karyawan" aria-describedby="id_karyawanHelp">
+            <div id="id_karyawan" class="form-text"></div>
         </div>
        
         <div class="mb-3">
@@ -64,7 +66,7 @@ $ids = mysqli_fetch_array($data);
         </div>
         
         <button type="submit" class="btn btn-primary">Submit</button>
-        <a class="btn btn-secondary" href = "penjadwalan.php"> Batal </a>
+        <a class="btn btn-secondary" href = "formedit_servis.php"> Batal </a>
         </form>
   </div>
 
